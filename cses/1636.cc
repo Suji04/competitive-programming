@@ -10,7 +10,7 @@ int main() {
   for (int i = 0; i < n; i++) cin >> a[i];
   d[0] = 1;
   for (int c : a)
-    for (int i = 1; i <= x; i++)
-      if (c <= i) d[i] = (d[i] + d[i - c]) % 1000000007;
+    for (int i = c; i <= x; i++)
+      d[i] = (d[i] + d[i - c]) % 1000000007;
   cout << d[x] << "\n";
 }
